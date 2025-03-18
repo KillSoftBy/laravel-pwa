@@ -1,4 +1,15 @@
-# PWA Easy Setup for Laravel
+# PWA Easy Setup for Laravel (With Vue.js and React.js)
+
+<center>
+    <img width="956" alt="Screenshot 2024-10-04 at 10 34 23 PM" src="https://github.com/user-attachments/assets/2b187de0-d5cc-4871-9c5d-ce0ffbb5a26c">
+</center>
+<div align="center">
+
+[![Packagist License](https://img.shields.io/badge/Licence-MIT-blue)](https://github.com/eramitgupta/laravel-pwa/blob/main/LICENSE)
+[![Latest Stable Version](https://img.shields.io/packagist/v/erag/laravel-pwa?label=Stable)](https://packagist.org/packages/erag/laravel-pwa)
+[![Total Downloads](https://img.shields.io/packagist/dt/erag/laravel-pwa.svg?label=Downloads)](https://packagist.org/packages/erag/laravel-pwa)
+
+</div>
 
 Laravel PWA is a package designed to seamlessly integrate Progressive Web Application (PWA) functionality into your Laravel projects. With this package, you can easily configure, update the manifest, and register service workers, enabling any Laravel app to function as a PWA.
 
@@ -26,7 +37,7 @@ composer require erag/laravel-pwa
 Once installed, publish the PWA configuration files using:
 
 ```bash
-php artisan erag:publish-laravel-pwa
+php artisan erag:install-pwa
 ```
 
 This will create the required configuration file `config/pwa.php` and set up PWA functionality for your application.
@@ -39,7 +50,7 @@ This is your main configuration file where you can customize the PWA settings.
 
 ```php
 return [
-    'install-button' => true, // Show or hide install button globally
+    'install-button' => true, // Show or hide the install button globally.
 
     'manifest' => [
         'name' => 'Laravel PWA',
@@ -57,7 +68,7 @@ return [
         ],
     ],
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false), // Show or hide console.log in the browser globally.
 ];
 ```
 
@@ -67,7 +78,7 @@ After changing `config/pwa.php` in your `manifest` array, run this command
 You can update your PWA manifest file by running:
 
 ```bash
-php artisan erag:pwa-update-manifest
+php artisan erag:update-manifest
 ```
 
 This command updates the `manifest.json` file located in the public directory of your Laravel project.
